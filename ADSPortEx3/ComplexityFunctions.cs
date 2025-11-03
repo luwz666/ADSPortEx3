@@ -46,46 +46,28 @@ namespace ADSPortEx3
             // O(n)   - Final answer
         }
 
-        public void ScheduleCheck()
+        public void Algorithm1()
         {
-
-            Console.WriteLine("Enter number of satellites: ");
-
-            int satellites = Int32.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter number of time slots: ");
-
-            int slots = Int32.Parse(Console.ReadLine());
-
-            // Create a schedule matrix [satellites x slots]
-            bool[,] schedule = new bool[satellites, slots];
-
-            Console.WriteLine("Checking availability...");
-
-            for (int i = 0; i < satellites; i++)
+            int n = Int32.Parse(Console.ReadLine());
+            List<int> numbers = new List<int>();
+            for (int i = 0; i < n; i++)
             {
-
-                Console.WriteLine("Checking satellite " + (i + 1));
-
-                for (int j = 0; j < slots; j++)
+                numbers.Add(i * 2);
+            }
+            int total = 0;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i; j < n; j++)
                 {
-                    schedule[i, j] = (i + j) % 2 == 0;
-                    if (schedule[i, j])
-                    {
-                        Console.WriteLine("Satellite " + (i + 1) + " is available at slot " + (j + 1));
-                    }
-
+                    if (numbers[j] % 3 == 0)
+                      total += numbers[j];  
                 }
             }
-
-            Console.WriteLine("Schedule check complete.");
-
-            Console.ReadLine();
+            Console.WriteLine("Total: " + total);
         }
 
-        public void SignalProcessing()
+        public void Algorithm2()
         {
-
 
             int n = Int32.Parse(Console.ReadLine());
             int primeCount = 0;
