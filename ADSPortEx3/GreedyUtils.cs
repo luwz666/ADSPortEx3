@@ -13,7 +13,7 @@ namespace ADSPortEx3
         //Hints : 
         //Use lecture materials from Week 8 to aid with implementation.
 
-        public static List<Task> GetGreedyOptimTasks(List<Task> items, double limit)
+        public static List<Task> GetGreedyOptimTasks(List<AidItem> items, double limit)
         {
             throw new NotImplementedException();
         }
