@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ADSPortEx3
 {
-    //Item class implementation for Assessed Exercise 3
+    //AidItem class implementation for Assessed Exercise 3
 
     //For use as part of EX.3C
 
     //Use slides from Week 8A regarding the knapsack algorithm example to aid with implementation
 
-    class Task : IComparable
+    class AidItem: IComparable
     {
-        public Task(string name, int value, int energyCost)
+        public AidItem(string name, int weight, int priority)
         {
             throw new NotImplementedException();
         }
@@ -25,19 +25,19 @@ namespace ADSPortEx3
             set { throw new NotImplementedException(); }
         }
 
-        public int Value
+        public int Weight
         {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
         }
 
-        public double EnergyCost
+        public int Priority
         {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
         }
 
-        public double Efficiency
+        public double PriorityRatio
         {
             get { throw new NotImplementedException(); }
         }
