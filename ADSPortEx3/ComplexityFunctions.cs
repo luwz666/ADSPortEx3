@@ -85,36 +85,29 @@ namespace ADSPortEx3
 
         public void SignalProcessing()
         {
-            Console.WriteLine("Enter number of signals to process: ");
+
 
             int n = Int32.Parse(Console.ReadLine());
+            int primeCount = 0;
 
-            int[] signals = new int[n];
-
-            // Pretend we fill array with signal strength values
-            for (int i = 0; i < n; i++)
+            for (int i = 2; i <= n; i++)
             {
-                signals[i] = i + 1; // simple increasing values
-            }
-
-            Console.WriteLine("Processing signals...");
-
-            // Compare every signal with every other (nested loop)
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
+                bool isPrime = true;
+                int j = 2;
+                while (j * j <= i)
                 {
-                    int diff = Math.Abs(signals[i] - signals[j]);
-                    if (diff == 0)
+                    if (i % j == 0)
                     {
-                        Console.WriteLine("Duplicate signal detected: " + signals[i]);
+                        isPrime = false;
+                        break;
                     }
+                    j++;
                 }
+                if (isPrime)
+                    primeCount++;
+                
             }
-
-            Console.WriteLine("Signal processing complete.");
-            Console.ReadLine();
+            Console.WriteLine("Number of primes up to " + n + ": " + primeCount);
         }
-
     }
 }
